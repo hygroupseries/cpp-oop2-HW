@@ -2,6 +2,10 @@
 #include <iostream>
 using namespace std;
 
+// 先声明类，保证后面模板特化能找到类型
+class Student;
+class Teacher;
+
 // 主模板：默认行为（可省略，仅用于占位）
 template<typename T>
 struct CreditTraits {
@@ -23,7 +27,7 @@ struct CreditTraits<Teacher> {
     static constexpr int factor = 3;
 };
 
-// 类定义
+// 再给出完整定义（如果需要）
 class Student {};
 class Teacher {};
 
@@ -38,9 +42,9 @@ int main() {
     cout << "请输入小时数: ";
     cin >> hour;
 
-    // 计算并输出
     cout << "Student credits: " << calculateCredits<Student>(hour) << endl;
     cout << "Teacher credits: " << calculateCredits<Teacher>(hour) << endl;
 
     return 0;
 }
+

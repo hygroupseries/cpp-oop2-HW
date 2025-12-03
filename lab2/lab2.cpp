@@ -32,7 +32,13 @@ public:
     }
 
     // 友元函数：重载输出运算符
-    friend ostream& operator<<(ostream& os, const Student<T>& s);
+
+    friend ostream& operator<<(ostream& os, const Student<T>& s) {
+    os << "Name: " << s.m_name << ", ID: " << s.m_id
+       << ", Course: " << s.m_course << ", Score: " << s.m_score
+       << ", Grade: " << s.setGrade();
+    return os;
+}
 
 private:
     string m_name;

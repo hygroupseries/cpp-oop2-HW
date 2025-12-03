@@ -64,7 +64,7 @@ int main() {
     // ========== 累加输出 ==========
     cout << "********************** 累加输出 **********************" << endl;
     Accumulator acc;
-    for_each(data.begin(), data.end(), acc);  // 使用函数对象累加
+    acc = for_each(data.begin(), data.end(), acc);  // 使用函数对象累加
     cout << acc.getSum() << endl;
 
     return 0;

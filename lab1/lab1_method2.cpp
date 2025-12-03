@@ -2,6 +2,9 @@
 #include <iostream>
 using namespace std;
 
+class Student;
+class Teacher;
+
 // 主模板：定义类型别名
 template<typename T>
 struct CreditTraits {
@@ -23,10 +26,8 @@ struct CreditTraits<Teacher> {
     static constexpr int factor = 3;
 };
 
-// 类定义
 class Student {};
 class Teacher {};
-
 // 函数模板：使用 typename 和 :: 访问类型
 template<typename T>
 typename CreditTraits<T>::CreditType calculateCredits(int hour) {
